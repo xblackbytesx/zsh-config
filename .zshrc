@@ -5,7 +5,7 @@ then
     zmodload zsh/zprof
 fi
 
-source /usr/share/zsh/scripts/antigen/antigen.zsh
+source ~/zsh/antigen/antigen.zsh
 source $HOME/.aliases
 source /usr/share/nvm/init-nvm.sh
 

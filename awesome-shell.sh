@@ -3,9 +3,8 @@
 # Install basics
 sudo pacman -S zsh zsh-completions
 
-yaourt -S antigen-git
+git clone https://github.com/zsh-users/antigen.git
 yaourt -S awesome-terminal-fonts-patched
 
 
 ln -s ~/zsh/.zshrc ~/
-
