@@ -23,13 +23,13 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
+#antigen bundle git
+antigen bundle gitfast
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-# antigen theme af-magic
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
 # Tell antigen that you're done.
