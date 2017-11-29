@@ -7,7 +7,7 @@ fi
 
 source ~/zsh/antigen/antigen.zsh
 source $HOME/.aliases
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='awesome-patched'
@@ -23,8 +23,7 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-#antigen bundle git
-antigen bundle gitfast
+antigen bundle git
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
