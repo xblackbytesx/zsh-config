@@ -7,4 +7,4 @@ git clone https://github.com/zsh-users/antigen.git
 yaourt -S awesome-terminal-fonts-patched
 
 ln -s ~/zsh/.zshrc ~/
-ln -s ~/zsh/.aliasses ~/
+ln -s ~/zsh/.aliases ~/
