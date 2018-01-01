@@ -9,7 +9,9 @@ source $HOME/zsh-config/antigen/antigen.zsh
 source $HOME/.aliases
 source $HOME/zsh-config/theme-settings/powerlevel9k
 source $HOME/zsh-config/functions/hugo
-# source /usr/share/nvm/init-nvm.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Load some antigen bundles
 antigen use oh-my-zsh

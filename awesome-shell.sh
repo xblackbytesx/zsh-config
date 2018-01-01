@@ -4,6 +4,7 @@
 sudo pacman -S zsh zsh-completions
 
 git clone https://github.com/zsh-users/antigen.git
+git clone https://github.com/creationix/nvm.git ~/.nvm
 yaourt -S awesome-terminal-fonts-patched
 
 ln -s ~/zsh-config/.zshrc ~/
