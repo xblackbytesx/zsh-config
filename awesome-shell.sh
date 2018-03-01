@@ -9,5 +9,6 @@ yaourt -S awesome-terminal-fonts-patched
 
 ln -s ~/zsh-config/.zshrc ~/
 ln -s ~/zsh-config/.aliases ~/
+ln -s ~/zsh-config/.yaourtrc ~/
 
 chsh -s $(which zsh)
