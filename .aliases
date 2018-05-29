@@ -1,4 +1,5 @@
 alias ll="ls -al"
+alias atom="atom-git"
 
 # Routers
 alias reboot-nighthawk1="ssh 10.0.221.1 'reboot'"

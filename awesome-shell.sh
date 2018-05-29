@@ -7,8 +7,9 @@ git clone https://github.com/zsh-users/antigen.git
 git clone https://github.com/creationix/nvm.git ~/.nvm
 yaourt -S awesome-terminal-fonts-patched
 
+# sudo pacman -S yarn
+
 ln -s ~/zsh-config/.zshrc ~/
 ln -s ~/zsh-config/.aliases ~/
-ln -s ~/zsh-config/.yaourtrc ~/
 
 chsh -s $(which zsh)
