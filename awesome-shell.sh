@@ -5,7 +5,7 @@ sudo pacman -S zsh zsh-completions
 
 git clone https://github.com/zsh-users/antigen.git
 git clone https://github.com/creationix/nvm.git ~/.nvm
-yaourt -S awesome-terminal-fonts-patched
+aurman -S awesome-terminal-fonts-patched
 
 # sudo pacman -S yarn
 
