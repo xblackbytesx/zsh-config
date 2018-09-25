@@ -8,7 +8,7 @@ fi
 source $HOME/zsh-config/antigen/antigen.zsh
 source $HOME/.aliases
 source $HOME/zsh-config/theme-settings/powerlevel9k
-source $HOME/zsh-config/functions/hugo
+source $HOME/zsh-config/functions/updatemirrors
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
