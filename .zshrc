@@ -9,6 +9,11 @@ source $HOME/zsh-config/antigen/antigen.zsh
 source $HOME/.aliases
 source $HOME/zsh-config/theme-settings/powerlevel9k
 source $HOME/zsh-config/functions/updatemirrors
+source $HOME/zsh-config/functions/private_functions/updatenudb
+
+source ~/dotfiles/common/scripts.sh
+source ~/dotfiles/common/kube_scripts.sh
+source ~/dotfiles/common/prompt.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
