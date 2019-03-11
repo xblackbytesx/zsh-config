@@ -52,5 +52,7 @@ function backupPhone {
   sudo adb pull "/sdcard/Android"
   sudo chown -R fabio:users Android
 
+  sudo sync
+
   echo "Done!"
 }
