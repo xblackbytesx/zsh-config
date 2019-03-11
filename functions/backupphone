@@ -1,0 +1,57 @@
+function backupPhone {
+  foldername=$(date +%Y%m%d)
+  backuplocation=~/Documents/backups/android/"$foldername"
+  echo "location is $backuplocation"
+
+  mkdir -p "$backuplocation"
+  cd "$backuplocation"
+
+  adb devices
+
+  echo "Backing up Photos dir"
+  adb pull "/sdcard/DCIM"
+
+  echo "Backing up content dir"
+  mkdir -p content
+  cd content
+  adb pull "/sdcard/content/titanium"
+  adb pull "/sdcard/content/call-recordings"
+  adb pull "/sdcard/content/vault"
+  adb pull "/sdcard/content/pebble"
+  adb pull "/sdcard/content/bip"
+  adb pull "/sdcard/content/band3"
+  adb pull "/sdcard/content/music"
+
+  cd "$backuplocation"
+
+  adb pull "/sdcard/Darkops\ /wallpapers"
+  adb pull "/sdcard/Download"
+  adb pull "/sdcard/Pictures"
+  adb pull "/sdcard/Record"
+  adb pull "/sdcard/Signal"
+  adb pull "/sdcard/Snapseed"
+  adb pull "/sdcard/Movies"
+  adb pull "/sdcard/DJI"
+  adb pull "/sdcard/data"
+  adb pull "/sdcard/GCam"
+  adb pull "/sdcard/afwall"
+  adb pull "/sdcard/RecordersRecycle"
+
+  mkdir -p Android
+  cd Android
+  adb pull "/sdcard/Android/data"
+  adb pull "/sdcard/Android/media"
+  adb pull "/sdcard/Android/obb"
+
+  cd "$backuplocation"
+
+  sudo adb pull "/sdcard/WhatsApp"
+  sudo chown -R fabio:users WhatsApp
+
+  mv Android AndroidBAK
+
+  sudo adb pull "/sdcard/Android"
+  sudo chown -R fabio:users Android
+
+  echo "Done!"
+}
