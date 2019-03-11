@@ -24,7 +24,6 @@ function backupPhone {
 
   cd "$backuplocation"
 
-  adb pull "/sdcard/Darkops\ /wallpapers"
   adb pull "/sdcard/Download"
   adb pull "/sdcard/Pictures"
   adb pull "/sdcard/Record"
