@@ -9,39 +9,39 @@ function backupPhone {
   sudo adb devices
 
   echo "Backing up Photos dir"
-  sudo adb pull "/sdcard/DCIM"
+  sudo adb pull -a "/sdcard/DCIM"
 
   echo "Backing up content dir"
   mkdir -p content
   cd content
-  sudo adb pull "/sdcard/content/titanium"
-  sudo adb pull "/sdcard/content/call-recordings"
-  sudo adb pull "/sdcard/content/vault"
-  sudo adb pull "/sdcard/content/pebble"
-  sudo adb pull "/sdcard/content/bip"
-  sudo adb pull "/sdcard/content/band3"
-  sudo adb pull "/sdcard/content/music"
+  sudo adb pull -a "/sdcard/content/titanium"
+  sudo adb pull -a "/sdcard/content/call-recordings"
+  sudo adb pull -a "/sdcard/content/vault"
+  sudo adb pull -a "/sdcard/content/pebble"
+  sudo adb pull -a "/sdcard/content/bip"
+  sudo adb pull -a "/sdcard/content/band3"
+  sudo adb pull -a "/sdcard/content/music"
 
   cd "$backuplocation"
 
-  sudo adb pull "/sdcard/Download"
-  sudo adb pull "/sdcard/Pictures"
-  sudo adb pull "/sdcard/Record"
-  sudo adb pull "/sdcard/Signal"
-  sudo adb pull "/sdcard/Snapseed"
-  sudo adb pull "/sdcard/Movies"
-  sudo adb pull "/sdcard/DJI"
-  sudo adb pull "/sdcard/data"
-  sudo adb pull "/sdcard/GCam"
-  sudo adb pull "/sdcard/afwall"
-  sudo adb pull "/sdcard/RecordersRecycle"
-  sudo adb pull "/sdcard/WhatsApp"
+  sudo adb pull -a "/sdcard/Download"
+  sudo adb pull -a "/sdcard/Pictures"
+  sudo adb pull -a "/sdcard/Record"
+  sudo adb pull -a "/sdcard/Signal"
+  sudo adb pull -a "/sdcard/Snapseed"
+  sudo adb pull -a "/sdcard/Movies"
+  sudo adb pull -a "/sdcard/DJI"
+  sudo adb pull -a "/sdcard/data"
+  sudo adb pull -a "/sdcard/GCam"
+  sudo adb pull -a "/sdcard/afwall"
+  sudo adb pull -a "/sdcard/RecordersRecycle"
+  sudo adb pull -a "/sdcard/WhatsApp"
 
   mkdir -p Android
   cd Android
-  sudo adb pull "/sdcard/Android/data"
-  sudo adb pull "/sdcard/Android/media"
-  sudo adb pull "/sdcard/Android/obb"
+  sudo adb pull -a "/sdcard/Android/data"
+  sudo adb pull -a "/sdcard/Android/media"
+  sudo adb pull -a "/sdcard/Android/obb"
 
   cd "$backuplocation"
   sudo chown -R fabio:users "$backuplocation"
