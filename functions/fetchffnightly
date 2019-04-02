@@ -1,0 +1,22 @@
+function fetchffnightly {
+  echo "Downloading latest version of Firefox Nightly"
+
+  sudo mv /opt/firefox-nightly /opt/firefox-nightly_$(date +%s)
+  sudo wget "https://download.mozilla.org/?product=firefox-nightly-latest-ssl&os=linux64&lang=en-US" -O /opt/firefox-nightly.tar.bz2
+  sudo tar -xvf /opt/firefox-nightly.tar.bz2 -C /opt/
+  sudo mv /opt/firefox /opt/firefox-nightly
+  sudo chown -R fabio:users /opt/firefox-nightly
+  sudo rm /opt/firefox-nightly.tar.bz2
+
+  rm .local/share/applications/firefox-nightly.desktop
+
+  echo "[Desktop Entry]" >> .local/share/applications/firefox-nightly.desktop
+  echo "Encoding=UTF-8" >> .local/share/applications/firefox-nightly.desktop
+  echo "Version=1.0" >> .local/share/applications/firefox-nightly.desktop
+  echo "Type=Application" >> .local/share/applications/firefox-nightly.desktop
+  echo "Exec=/opt/firefox-nightly/firefox-bin %u" >> .local/share/applications/firefox-nightly.desktop
+  echo "Name=Firefox Nightly" >> .local/share/applications/firefox-nightly.desktop
+  echo "Comment=Custom definition for Nightly" >> .local/share/applications/firefox-nightly.desktop
+
+  echo "Done!"
+}

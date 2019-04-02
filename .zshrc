@@ -10,6 +10,7 @@ source $HOME/.aliases
 source $HOME/zsh-config/theme-settings/powerlevel9k
 source $HOME/zsh-config/functions/updatemirrors
 source $HOME/zsh-config/functions/private_functions/updatenudb
+source $HOME/zsh-config/functions/backupphone
 
 source ~/dotfiles/common/scripts.sh
 source ~/dotfiles/common/kube_scripts.sh

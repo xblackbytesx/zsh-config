@@ -1,0 +1,52 @@
+function backupPhone {
+  foldername=$(date +%Y%m%d)
+  backuplocation=~/Documents/backups/android/"$foldername"
+  echo "location is $backuplocation"
+
+  mkdir -p "$backuplocation"
+  cd "$backuplocation"
+
+  sudo adb devices
+
+  echo "Backing up Photos dir"
+  sudo adb pull -a "/sdcard/DCIM"
+
+  echo "Backing up content dir"
+  mkdir -p content
+  cd content
+  sudo adb pull -a "/sdcard/content/titanium"
+  sudo adb pull -a "/sdcard/content/call-recordings"
+  sudo adb pull -a "/sdcard/content/vault"
+  sudo adb pull -a "/sdcard/content/pebble"
+  sudo adb pull -a "/sdcard/content/bip"
+  sudo adb pull -a "/sdcard/content/band3"
+  sudo adb pull -a "/sdcard/content/music"
+
+  cd "$backuplocation"
+
+  sudo adb pull -a "/sdcard/Download"
+  sudo adb pull -a "/sdcard/Pictures"
+  sudo adb pull -a "/sdcard/Record"
+  sudo adb pull -a "/sdcard/Signal"
+  sudo adb pull -a "/sdcard/Snapseed"
+  sudo adb pull -a "/sdcard/Movies"
+  sudo adb pull -a "/sdcard/DJI"
+  sudo adb pull -a "/sdcard/data"
+  sudo adb pull -a "/sdcard/GCam"
+  sudo adb pull -a "/sdcard/afwall"
+  sudo adb pull -a "/sdcard/RecordersRecycle"
+  sudo adb pull -a "/sdcard/WhatsApp"
+
+  mkdir -p Android
+  cd Android
+  sudo adb pull -a "/sdcard/Android/data"
+  sudo adb pull -a "/sdcard/Android/media"
+  sudo adb pull -a "/sdcard/Android/obb"
+
+  cd "$backuplocation"
+  sudo chown -R fabio:users "$backuplocation"
+
+  sudo sync
+
+  echo "Done!"
+}
