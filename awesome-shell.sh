@@ -9,6 +9,7 @@ aurman -S awesome-terminal-fonts-patched
 
 # sudo pacman -S yarn
 
+touch ~/zsh-config/.device_specific
 ln -s ~/zsh-config/.zshrc ~/
 ln -s ~/zsh-config/.aliases ~/
 
