@@ -8,9 +8,13 @@ fi
 source $HOME/zsh-config/antigen/antigen.zsh
 source $HOME/.aliases
 source $HOME/zsh-config/theme-settings/powerlevel9k
+
+# Functions
 source $HOME/zsh-config/functions/updatemirrors
-source $HOME/zsh-config/functions/private_functions/updatenudb
 source $HOME/zsh-config/functions/backupphone
+
+# Private functions (not in repo)
+source $HOME/zsh-config/functions/private_functions/updatenudb
 
 source ~/dotfiles/common/scripts.sh
 source ~/dotfiles/common/kube_scripts.sh
