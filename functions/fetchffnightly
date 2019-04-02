@@ -14,6 +14,7 @@ function fetchffnightly {
   echo "Encoding=UTF-8" >> .local/share/applications/firefox-nightly.desktop
   echo "Version=1.0" >> .local/share/applications/firefox-nightly.desktop
   echo "Type=Application" >> .local/share/applications/firefox-nightly.desktop
+  echo "Icon=/opt/firefox-nightly/browser/chrome/icons/default/default128.png" >> .local/share/applications/firefox-nightly.desktop
   echo "Exec=/opt/firefox-nightly/firefox-bin %u" >> .local/share/applications/firefox-nightly.desktop
   echo "Name=Firefox Nightly" >> .local/share/applications/firefox-nightly.desktop
   echo "Comment=Custom definition for Nightly" >> .local/share/applications/firefox-nightly.desktop
