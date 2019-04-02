@@ -12,6 +12,7 @@ source $HOME/zsh-config/theme-settings/powerlevel9k
 # Functions
 source $HOME/zsh-config/functions/updatemirrors
 source $HOME/zsh-config/functions/backupphone
+source $HOME/zsh-config/functions/fetchffnightly
 
 # Private functions (not in repo)
 source $HOME/zsh-config/functions/private_functions/updatenudb
