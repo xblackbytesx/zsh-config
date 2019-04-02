@@ -14,12 +14,8 @@ source $HOME/zsh-config/functions/updatemirrors
 source $HOME/zsh-config/functions/backupphone
 source $HOME/zsh-config/functions/fetchffnightly
 
-# Private functions (not in repo)
-source $HOME/zsh-config/functions/private_functions/updatenudb
-
-source ~/dotfiles/common/scripts.sh
-source ~/dotfiles/common/kube_scripts.sh
-source ~/dotfiles/common/prompt.sh
+# Device specific stuff
+source $HOME/zsh-config/.device_specific
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
