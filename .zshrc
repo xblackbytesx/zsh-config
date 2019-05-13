@@ -13,6 +13,7 @@ source $HOME/zsh-config/theme-settings/powerlevel9k
 source $HOME/zsh-config/functions/updatemirrors
 source $HOME/zsh-config/functions/backupphone
 source $HOME/zsh-config/functions/fetchffnightly
+source $HOME/zsh-config/functions/sortbymonth
 
 # Device specific stuff
 source $HOME/zsh-config/.device_specific

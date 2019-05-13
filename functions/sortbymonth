@@ -1,0 +1,11 @@
+function sortbymonth {
+  echo "Sorting photos by month"
+  
+  for i in {01..12}
+    do
+      echo "Create dir and move photo's for month $i"
+      mkdir ./$i
+      mv *20**$i* $i/
+    done
+}
+
