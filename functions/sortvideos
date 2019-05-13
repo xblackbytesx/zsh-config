@@ -8,6 +8,6 @@ function sortvideos {
       echo "Create dir and move photo's for month $i"
       mkdir -p ./video/$i
       mv ./$i/*.mp4 ./video/$i/
+      mv ./$i/*.3gp ./video/$i/
     done
 }
-
