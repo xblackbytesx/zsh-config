@@ -29,6 +29,7 @@ function backupPhone {
   sudo adb pull -a "/sdcard/Download"
   sudo adb pull -a "/sdcard/Pictures"
   sudo adb pull -a "/sdcard/Record"
+  sudo adb pull -a "/sdcard/CallRecordings"
   sudo adb pull -a "/sdcard/Signal"
   sudo adb pull -a "/sdcard/Snapseed"
   sudo adb pull -a "/sdcard/Movies"

@@ -1,0 +1,33 @@
+function restorePhone {
+  foldername=$(date +%Y%m%d)
+  backuplocation=~/Documents/backups/android/"$foldername"
+  echo "location is $backuplocation"
+
+  cd "$backuplocation"
+
+  adb devices
+
+  echo "Restoring Photos dir"
+  adb push "DCIM" /sdcard/
+
+  echo "Restoring content dir"
+  adb push "content" /sdcard/
+
+  adb push "Download" /sdcard/
+  adb push "Pictures" /sdcard/
+  adb push "CallRecordings" /sdcard/
+  adb push "Signal" /sdcard/
+  adb push "Snapseed" /sdcard/
+  adb push "Movies" /sdcard/
+  adb push "DJI" /sdcard/
+  adb push "data" /sdcard/
+  adb push "GCam" /sdcard/
+  adb push "afwall" /sdcard/
+  adb push "WhatsApp" /sdcard/
+  adb push "MapsWithMe" /sdcard/
+  adb push ".torque" /sdcard/
+
+  sudo sync
+
+  echo "Done!"
+}
