@@ -1,10 +1,4 @@
 function restorePhone {
-  foldername=$(date +%Y%m%d)
-  backuplocation=~/Documents/backups/android/"$foldername"
-  echo "location is $backuplocation"
-
-  cd "$backuplocation"
-
   adb devices
 
   echo "Restoring Photos dir"
