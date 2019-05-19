@@ -17,10 +17,12 @@ function backupPhone {
   sudo adb pull -a "/sdcard/content/titanium"
   sudo adb pull -a "/sdcard/content/call-recordings"
   sudo adb pull -a "/sdcard/content/vault"
+  sudo adb pull -a "/sdcard/content/ssh"
   sudo adb pull -a "/sdcard/content/pebble"
   sudo adb pull -a "/sdcard/content/bip"
   sudo adb pull -a "/sdcard/content/band3"
   sudo adb pull -a "/sdcard/content/music"
+  sudo adb pull -a "/sdcard/content/maps"
 
   cd "$backuplocation"
 
@@ -36,6 +38,8 @@ function backupPhone {
   sudo adb pull -a "/sdcard/afwall"
   sudo adb pull -a "/sdcard/RecordersRecycle"
   sudo adb pull -a "/sdcard/WhatsApp"
+  sudo adb pull -a "/sdcard/MapsWithMe"
+  sudo adb pull -a "/sdcard/.torque"
 
   mkdir -p Android
   cd Android
