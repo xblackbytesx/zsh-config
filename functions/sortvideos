@@ -1,13 +1,13 @@
 function sortvideos {
   echo "Separating out the videos"
-  
-  mkdir ./video
 
-  for i in {01..12}
+  for dir in *;
     do
-      echo "Create dir and move photo's for month $i"
-      mkdir -p ./video/$i
-      mv ./$i/*.mp4 ./video/$i/
-      mv ./$i/*.3gp ./video/$i/
+      if [ -d ${dir} ] && [ ${dir} != "video" ]; then
+        echo "Create dir and move photo's for month $i"
+        mkdir -p ./video/$dir
+        mv ./$dir/*.mp4 ./video/$dir/
+        mv ./$dir/*.3gp ./video/$dir/
+      fi;
     done
 }
