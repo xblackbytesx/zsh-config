@@ -1,11 +1,13 @@
 function sortbymonth {
-  echo "Sorting photos by month for year ${PWD##*/}"
-  
-  for i in {01..12}
+  currentYear=${PWD##*/}
+
+  echo "Sorting photos by month for year $YEAR"
+
+  for month in {01..12}
     do
-      echo "Create dir and move photo's for month $i"
-      mkdir ./$i
-      mv *${PWD##*/}$i**_* $i/
+      echo "Create dir and move photo's for month $month"
+      mkdir ./$month
+      mv *$currentYear$month**_* $month/
+      mv *$currentYear$month*********** $month/
     done
 }
-
