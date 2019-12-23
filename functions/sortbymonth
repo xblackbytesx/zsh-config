@@ -8,6 +8,6 @@ function sortbymonth {
       echo "Create dir and move photo's for month $month"
       mkdir ./$month
       mv *$currentYear$month**_* $month/
-      mv *$currentYear$month*********** $month/
+      mv *_BURST$currentYear$month*********** $month/
     done
 }

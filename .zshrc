@@ -14,8 +14,10 @@ source $HOME/zsh-config/functions/updatemirrors
 source $HOME/zsh-config/functions/backupphone
 source $HOME/zsh-config/functions/restorephone
 source $HOME/zsh-config/functions/fetchffnightly
+source $HOME/zsh-config/functions/sortbyyear
 source $HOME/zsh-config/functions/sortbymonth
 source $HOME/zsh-config/functions/sortvideos
+source $HOME/zsh-config/functions/sortphotos
 
 # Device specific stuff
 source $HOME/zsh-config/.device_specific

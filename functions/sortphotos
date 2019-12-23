@@ -1,0 +1,22 @@
+function sortphotos {
+  echo "Sorting photos by year, month and type"
+
+  rm -rf thumbnails
+  mv **/*.jpg .
+  find . -type d -empty -delete
+
+  sortbyyear
+
+  for dir in *;
+    do
+      if [ -d ${dir} ] && [ ${dir} != "video" ]; then
+        cd $dir
+        sortbymonth
+        sortvideos
+        cd ../
+      fi;
+    done
+
+  # Recursively delete all empty dirs
+  find . -type d -empty -delete
+}

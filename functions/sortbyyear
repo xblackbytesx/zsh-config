@@ -1,0 +1,11 @@
+function sortbyyear {
+  echo "Sorting photos by year"
+
+  for year in {2015..2025}
+    do
+      echo "Create dir and move photo's for year $year"
+      mkdir ./$year
+      mv *$year****_* $year/
+      mv *_BURST$year************* $year/
+    done
+}
