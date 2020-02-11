@@ -10,6 +10,8 @@ function backupPhone {
 
   echo "Backing up Photos dir"
   sudo adb pull -a "/sdcard/DCIM"
+  sudo adb pull -a "/sdcard/inCollage"
+  sudo adb pull -a "/sdcard/Snapseed"
 
   echo "Backing up content dir"
   mkdir -p content
@@ -31,7 +33,6 @@ function backupPhone {
   sudo adb pull -a "/sdcard/Record"
   sudo adb pull -a "/sdcard/CallRecordings"
   sudo adb pull -a "/sdcard/Signal"
-  sudo adb pull -a "/sdcard/Snapseed"
   sudo adb pull -a "/sdcard/Movies"
   sudo adb pull -a "/sdcard/DJI"
   sudo adb pull -a "/sdcard/data"
@@ -39,8 +40,11 @@ function backupPhone {
   sudo adb pull -a "/sdcard/afwall"
   sudo adb pull -a "/sdcard/RecordersRecycle"
   sudo adb pull -a "/sdcard/WhatsApp"
+  sudo adb pull -a "/sdcard/Slack"
+  sudo adb pull -a "/sdcard/bluetooth"
   sudo adb pull -a "/sdcard/MapsWithMe"
   sudo adb pull -a "/sdcard/.torque"
+  sudo adb pull -a "/sdcard/TitaniumBackup_license.txt"
 
   mkdir -p Android
   cd Android
