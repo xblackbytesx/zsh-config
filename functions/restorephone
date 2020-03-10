@@ -19,6 +19,7 @@ function restorePhone {
   adb push "afwall" /sdcard/
   adb push "WhatsApp" /sdcard/
   adb push "MapsWithMe" /sdcard/
+  adb push "TitaniumBackup_license.txt" /sdcard/
   adb push ".torque" /sdcard/
 
   sudo sync

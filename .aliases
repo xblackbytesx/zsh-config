@@ -1,7 +1,7 @@
 alias ll="ls -al"
 
 # Routers
-alias reboot-nighthawk1="ssh 10.0.221.1 'reboot'"
+alias reboot-nighthawk1="ssh nighthawk 'reboot'"
 alias reboot-nighthawk2="ssh 10.0.221.2 'reboot'"
 alias reboot-linksys="ssh 10.0.221.3 'reboot'"
-alias restart-router-vpn="ssh 10.0.221.1 'service vpnclient1 restart'"
+alias restart-router-vpn="ssh nighthawk 'service vpnclient1 restart'"

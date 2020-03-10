@@ -11,4 +11,4 @@ then
 fi
 
 # Possible crontab entry:
-# */3 * * * * ~/zsh-config/shell-scripts/reboot-router-on-ping-fail.sh
+# */5 * * * * ~/zsh-config/shell-scripts/reboot-router-on-ping-fail.sh
