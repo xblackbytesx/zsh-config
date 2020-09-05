@@ -20,11 +20,12 @@ git clone https://github.com/zsh-users/antigen.git
 
 mv ~/.nvm ~/.nvm-$datetime
 git clone https://github.com/creationix/nvm.git ~/.nvm
+nvm install node
 
-if pacman -Q | grep -E '(^|\s)awesome-terminal-fonts-patched($|\s)' >/dev/null; then
+if pacman -Q | grep -E '(^|\s)nerd-fonts-complete($|\s)' >/dev/null; then
     echo "Dependency awesome-terminal-fonts-patched already satisfied"
 else
-    yay -S awesome-terminal-fonts-patched
+    yay -S nerd-fonts-complete
 fi
 
 touch ~/zsh-config/.device_specific

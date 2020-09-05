@@ -1,6 +1,11 @@
 function fetchffnightly {
   echo "Downloading latest version of Firefox Nightly"
 
+  if pacman -Q | grep -E '(^|\s)wget($|\s)' >/dev/null; then
+    echo "Dependency wget already satisfied"
+  else
+    sudo pacman -S wget
+  fi
   sudo mv /opt/firefox-nightly /opt/firefox-nightly_$(date +%s)
   sudo wget "https://download.mozilla.org/?product=firefox-nightly-latest-ssl&os=linux64&lang=en-US" -O /opt/firefox-nightly.tar.bz2
   sudo tar -xvf /opt/firefox-nightly.tar.bz2 -C /opt/
