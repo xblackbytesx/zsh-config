@@ -11,22 +11,14 @@ function backupPhone {
   echo "Backing up Photos dir"
   sudo adb pull -a "/sdcard/DCIM"
   sudo adb pull -a "/sdcard/inCollage"
+  sudo adb pull -a "/sdcard/inshot"
   sudo adb pull -a "/sdcard/Snapseed"
 
-  echo "Backing up content dir"
-  mkdir -p content
-  cd content
-  sudo adb pull -a "/sdcard/content/bip"
-  sudo adb pull -a "/sdcard/content/call-recordings"
-  sudo adb pull -a "/sdcard/content/lawnchair"
-  sudo adb pull -a "/sdcard/content/maps"
-  sudo adb pull -a "/sdcard/content/music"
-  sudo adb pull -a "/sdcard/content/pebble"
-  sudo adb pull -a "/sdcard/content/ssh"
-  sudo adb pull -a "/sdcard/content/titanium"
-  sudo adb pull -a "/sdcard/content/vault"
-
   cd "$backuplocation"
+
+  echo "Backing up content dir"
+  sudo adb pull -a "/sdcard/content"
+  echo "Content dir succesfully backed-up"
 
   sudo adb pull -a "/sdcard/afwall"
   sudo adb pull -a "/sdcard/bluetooth"
@@ -35,16 +27,15 @@ function backupPhone {
   sudo adb pull -a "/sdcard/Download"
   sudo adb pull -a "/sdcard/MapsWithMe"
   sudo adb pull -a "/sdcard/Movies"
+  sudo adb pull -a "/sdcard/Music"
+  sudo adb pull -a "/sdcard/monerujo"
   sudo adb pull -a "/sdcard/osmand"
   sudo adb pull -a "/sdcard/Pictures"
   sudo adb pull -a "/sdcard/Signal"
   sudo adb pull -a "/sdcard/Slack"
   sudo adb pull -a "/sdcard/WhatsApp"
-  sudo adb pull -a "/sdcard/Record"
-  sudo adb pull -a "/sdcard/CallRecordings"
   sudo adb pull -a "/sdcard/DJI"
   sudo adb pull -a "/sdcard/GCam"
-  sudo adb pull -a "/sdcard/RecordersRecycle"
   sudo adb pull -a "/sdcard/.torque"
   sudo adb pull -a "/sdcard/TitaniumBackup_license.txt"
 
