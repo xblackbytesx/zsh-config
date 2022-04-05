@@ -9,4 +9,6 @@ function sortbyyear {
       mv VID_$year****_* $year/
       mv *_BURST$year************* $year/
     done
+
+  find . -maxdepth 1 -type d -empty -delete
 }

@@ -11,4 +11,6 @@ function sortbymonth {
       mv VID_$currentYear$month**_* $month/
       mv *_BURST$currentYear$month*********** $month/
     done
+
+  find . -maxdepth 1 -type d -empty -delete
 }
