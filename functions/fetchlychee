@@ -1,0 +1,26 @@
+function fetchlychee {
+  echo "Downloading latest version of lychee"
+
+  LYCHEE_VERSION=3.7.1
+
+  if pacman -Q | grep -E '(^|\s)wget($|\s)' >/dev/null; then
+    echo "Dependency wget already satisfied"
+  else
+    sudo pacman -S wget
+  fi
+  sudo wget "https://mango-lychee.nyc3.cdn.digitaloceanspaces.com/LycheeSlicer-$LYCHEE_VERSION.AppImage" -O /usr/local/bin/lychee
+  sudo chmod +x /usr/local/bin/lychee
+
+  rm ~/.local/share/applications/lychee.desktop
+  touch ~/.local/share/applications/lychee.desktop
+
+  echo "[Desktop Entry]" >> ~/.local/share/applications/lychee.desktop
+  echo "Encoding=UTF-8" >> ~/.local/share/applications/lychee.desktop
+  echo "Version=$LYCHEE_VERSION" >> ~/.local/share/applications/lychee.desktop
+  echo "Type=Application" >> ~/.local/share/applications/lychee.desktop
+  echo "Exec=/usr/local/bin/lychee %u" >> ~/.local/share/applications/lychee.desktop
+  echo "Name=lychee" >> ~/.local/share/applications/lychee.desktop
+  echo "Comment=Custom definition for lychee" >> ~/.local/share/applications/lychee.desktop
+
+  echo "Done!"
+}

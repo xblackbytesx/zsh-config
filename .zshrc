@@ -15,6 +15,7 @@ source $HOME/zsh-config/functions/backupphone
 source $HOME/zsh-config/functions/restorephone
 source $HOME/zsh-config/functions/fetchffnightly
 source $HOME/zsh-config/functions/fetchcura
+source $HOME/zsh-config/functions/fetchlychee
 source $HOME/zsh-config/functions/fetchcompose
 source $HOME/zsh-config/functions/sortbyyear
 source $HOME/zsh-config/functions/sortbymonth
