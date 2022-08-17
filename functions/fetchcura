@@ -1,14 +1,14 @@
 function fetchcura {
   echo "Downloading latest version of Cura"
 
-  CURA_VERSION=4.13.1
+  CURA_VERSION=5.1.0
 
   if pacman -Q | grep -E '(^|\s)wget($|\s)' >/dev/null; then
     echo "Dependency wget already satisfied"
   else
     sudo pacman -S wget
   fi
-  sudo wget "https://github.com/Ultimaker/Cura/releases/download/$CURA_VERSION/Ultimaker_Cura-$CURA_VERSION.AppImage" -O /usr/local/bin/cura
+  sudo wget "https://github.com/Ultimaker/Cura/releases/download/$CURA_VERSION/Ultimaker-Cura-$CURA_VERSION-linux-modern.AppImage" -O /usr/local/bin/cura
   sudo chmod +x /usr/local/bin/cura
 
   rm ~/.local/share/applications/cura.desktop
@@ -18,7 +18,7 @@ function fetchcura {
   echo "Encoding=UTF-8" >> ~/.local/share/applications/cura.desktop
   echo "Version=$CURA_VERSION" >> ~/.local/share/applications/cura.desktop
   echo "Type=Application" >> ~/.local/share/applications/cura.desktop
-  echo "Exec=/usr/local/bin/cura %u" >> ~/.local/share/applications/cura.desktop
+  echo "Exec=LD_PRELOAD=/usr/local/bin/cura %u" >> ~/.local/share/applications/cura.desktop
   echo "Name=Cura" >> ~/.local/share/applications/cura.desktop
   echo "Comment=Custom definition for Cura" >> ~/.local/share/applications/cura.desktop
 

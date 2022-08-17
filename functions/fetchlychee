@@ -1,7 +1,7 @@
 function fetchlychee {
   echo "Downloading latest version of lychee"
 
-  LYCHEE_VERSION=3.7.1
+  LYCHEE_VERSION=4.0.11
 
   if pacman -Q | grep -E '(^|\s)wget($|\s)' >/dev/null; then
     echo "Dependency wget already satisfied"
