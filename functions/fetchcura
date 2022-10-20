@@ -1,7 +1,7 @@
 function fetchcura {
   echo "Downloading latest version of Cura"
 
-  CURA_VERSION=5.1.0
+  CURA_VERSION=5.2.1
 
   if pacman -Q | grep -E '(^|\s)wget($|\s)' >/dev/null; then
     echo "Dependency wget already satisfied"
