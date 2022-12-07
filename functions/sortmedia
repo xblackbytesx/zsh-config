@@ -1,0 +1,54 @@
+sortmedia() {
+  mkdir photos
+  mkdir videos
+
+  # Loop through all files in the current directory
+  for file in *; do
+    # Extract the file extension from the filename
+    ext="${file##*.}"
+
+    # Check if the file is a photo (e.g. has a jpg or png extension)
+    if [[ $ext == "jpg" || $ext == "png" ]]; then
+      # Set the destination directory to the "photos" folder
+      dir="photos"
+    # Check if the file is a video (e.g. has a mp4 or avi extension)
+    elif [[ $ext == "mp4" || $ext == "avi" ]]; then
+      # Set the destination directory to the "videos" folder
+      dir="videos"
+    else
+      # Skip files that are not photos or videos
+      continue
+    fi
+
+    # Extract the EXIF timestamp from the photo/video using the 'exiftool' command
+    # timestamp=$(exiftool -s -s -s "$file" | grep "Date/Time Original" | cut -d ":" -f 2- | tr -d " ")
+    if [[ $dir == "photos" ]]; then
+      timestamp=$(exiftool -DateTimeOriginal "$file" | cut -d ":" -f 2- | tr -d " ")
+    elif [[ $dir == "videos" ]]; then
+      timestamp=$(exiftool -MediaCreateDate "$file" | cut -d ":" -f 2- | tr -d " ")
+    fi
+
+    # Check if a valid timestamp was found
+    if [[ $timestamp != "" ]]; then
+      # Extract the year and month from the timestamp
+      year=$(echo $timestamp | cut -d ":" -f 1)
+      month=$(echo $timestamp | cut -d ":" -f 2)
+
+      # Check if the year and month directories exist, and create them if they don't
+      if [[ ! -d "$dir/$year" ]]; then
+        mkdir "$dir/$year"
+      fi
+      if [[ ! -d "$dir/$year/$month" ]]; then
+        mkdir "$dir/$year/$month"
+      fi
+
+      # Output details about the file
+      echo "Moving file: $file"
+      echo "Destination: $dir/$year/$month/$file"
+
+      # Move the photo/video to the appropriate year/month directory
+      mv "$file" "$dir/$year/$month/$file"
+    fi
+  done
+}
+

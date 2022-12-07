@@ -17,10 +17,10 @@ source $HOME/zsh-config/functions/fetchffnightly
 source $HOME/zsh-config/functions/fetchcura
 source $HOME/zsh-config/functions/fetchlychee
 source $HOME/zsh-config/functions/fetchcompose
-source $HOME/zsh-config/functions/sortbyyear
-source $HOME/zsh-config/functions/sortbymonth
-source $HOME/zsh-config/functions/sortvideos
-source $HOME/zsh-config/functions/sortphotos
+source $HOME/zsh-config/functions/sortmedia
+
+for f in ~/project/stack-kubernetes/bin/source/functions/*; do source $f; done
+for f in ~/project/stack-kubernetes/bin/source/prompt/*; do source $f; done
 
 # Device specific stuff
 source $HOME/zsh-config/.device_specific
